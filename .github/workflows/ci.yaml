@@ -1,18 +1,13 @@
-name: My First Workflow
+name: CI
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
 
 jobs:
-  say-hello:
+  typecheck:
     runs-on: ubuntu-latest
-    env:
-      MY_NAME: Tanhab
 
     steps:
       - name: Checkout the code
@@ -23,8 +18,8 @@ jobs:
         with:
           node-version: 24
 
-      - name: Print secret
-        run: echo "My secret is ${{ secrets.MY_SECRET_KEY }}"
+      - name: Install dependencies
+        run: npm install
 
-      - name: Run the file
-        run: node index.js
+      - name: Run typecheck
+        run: npx tsc --noEmit
