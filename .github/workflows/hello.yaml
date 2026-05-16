@@ -12,3 +12,9 @@ jobs:
     steps:
       - name: Print a message
         run: echo "Hello from GitHub Actions!"
+
+      - name: Checkout the code
+        uses: actions/checkout@v4
+
+      - name: List the files
+        run: ls -la
