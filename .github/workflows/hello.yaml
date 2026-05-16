@@ -8,15 +8,20 @@ on:
 jobs:
   say-hello:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout the code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v6.4.0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
       - name: Run the file
         run: node index.js
+
+  second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: I run in parallel
+        run: echo "I am a separate job running at the same time"
