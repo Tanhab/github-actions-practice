@@ -1,1 +1,1 @@
-const x: number = 'this is wrong'
+const x: number = 42
