@@ -23,8 +23,8 @@ jobs:
         with:
           node-version: 24
 
-      - name: Print env variable
-        run: echo "Hello, $MY_NAME"
+      - name: Print secret
+        run: echo "My secret is ${{ secrets.MY_SECRET_KEY }}"
 
       - name: Run the file
         run: node index.js
