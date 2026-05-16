@@ -1,1 +1,1 @@
-this is not valid javascript @@##
+console.log('Hello from Node!')
